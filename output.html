@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>source2html</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body style="background-color:black; color:white;">
+<pre>
+<span style="color:red;">1 </span><span class="header_file">&lt;#include stdio.h&gt;</span><span class="preprocess_dir">
+</span>
+<span style="color:red;">2 </span><span class="comment">/* this is multi-line comment */</span>
+<span style="color:red;">3 </span><span class="reserved_key1">int</span> main()
+{
+    <span style="color:red;">4 </span><span class="comment">// single line comment
+</span>    <span class="reserved_key1">int</span> a = <span class="numeric_constant">10</span>;
+    <span style="color:red;">5 </span><span class="reserved_key1">float</span> b = <span class="numeric_constant">20</span>.<span class="numeric_constant">5</span>;
+
+    <span style="color:red;">6 </span><span class="reserved_key1">char</span> ch<span class="ascii_char"> = 'A'</span>;
+    <span style="color:red;">7 </span>printf<span class="string">("Hello World %d\n"</span>, a);
+
+    <span style="color:red;">8 </span><span class="reserved_key2">if</span>(a &gt; <span class="numeric_constant">5</span>)
+    {
+        <span style="color:red;">9 </span><span class="reserved_key2">return</span> <span class="numeric_constant">0</span>;
+    }
+
+    <span style="color:red;">10 </span><span class="reserved_key2">return</span> <span class="numeric_constant">1</span>;
+}</pre>
+</body>
+</html>

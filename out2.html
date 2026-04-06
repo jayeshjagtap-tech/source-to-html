@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>source2html</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body style="background-color:black; color:white;">
+<pre>
+<span style="color:red;">1 </span><span class="header_file">&lt;#include stdio.h&gt;</span><span class="preprocess_dir">
+</span><span class="header_file">&lt;#include string.h&gt;</span><span class="preprocess_dir">
+</span><span class="preprocess_dir">#include "s2html_event.h"
+</span><span class="preprocess_dir">#include "s2html_conv.h"
+</span><span class="reserved_key1">int</span>main<span class="reserved_key1">int</span>argc<span class="reserved_key1">char</span>argvFILEsfpdfppeventtevent<span class="reserved_key1">int</span>linenumber<span class="numeric_constant"> = 1</span><span class="reserved_key1">int</span>enableline<span class="numeric_constant"> = 0</span>;
+
+	<span style="color:red;">2 </span><span class="comment">/* Usage check */</span><span class="reserved_key2">if</span>argc<span class="numeric_constant"> < 3</span>printf<span class="string">("USAGE : ./source_to_html <src_file.c> <output.html> <-n>\n"</span><span class="reserved_key2">return</span><span class="numeric_constant"> 1</span>;
+	}
+
+	<span style="color:red;">3 </span><span class="comment">/* Check -n option */</span><span class="reserved_key2">if</span>argc<span class="numeric_constant"> == 4</span>strcmpargv<span class="numeric_constant">[3</span><span class="string">], "-n"</span><span class="numeric_constant">) == 0</span>enableline<span class="numeric_constant"> = 1</span>;
+	}
+
+	<span style="color:red;">4 </span><span class="comment">/* Open source file */</span><span class="reserved_key2">if</span>sfpfopenargv<span class="numeric_constant">[1</span><span class="string">], "r"</span>NULLprintf<span class="string">("Error opening source file\n"</span><span class="reserved_key2">return</span><span class="numeric_constant"> 2</span>;
+	}
+
+	<span style="color:red;">5 </span><span class="comment">/* Open destination file */</span><span class="reserved_key2">if</span>dfpfopenargv<span class="numeric_constant">[2</span><span class="string">], "w"</span>NULLprintf<span class="string">("Error creating output file\n"</span>fclosesfp<span class="reserved_key2">return</span><span class="numeric_constant"> 3</span>;
+	}
+
+	<span style="color:red;">6 </span><span class="comment">/* Start HTML */</span>htmlbegindfpHTMLOPEN);
+
+	<span style="color:red;">7 </span><span class="comment">/* Add first line number if enabled */</span><span class="reserved_key2">if</span>enablelinefprintfdfp<span class="string">, "<span style=\"</span>colorred<span class="string">;\">%d </span>"</span>linenumber);
+
+	<span style="color:red;">8 </span><span class="comment">/* Process file */</span><span class="reserved_key2">do</span>eventgetparsereventsfp);
+
+		<span style="color:red;">9 </span><span class="comment">/* Print line numbers */</span><span class="reserved_key2">if</span>enablelineeventtypePEVENTREGULAREXP<span class="reserved_key2">for</span><span class="reserved_key1">int</span>i<span class="numeric_constant"> = 0</span>eventdataii<span class="reserved_key2">if</span>eventdatai<span class="ascii_char">] == '\n'</span>sourcetohtmldfpeventlinenumberfprintfdfp<span class="string">, "<span style=\"</span>colorred<span class="string">;\">%d </span>"</span>linenumber<span class="reserved_key2">goto</span>nextsourcetohtmldfpeventnext<span class="reserved_key2">while</span>eventtypePEVENTEOF);
+
+	<span style="color:red;">10 </span><span class="comment">/* End HTML */</span>htmlenddfpHTMLCLOSEprintf<span class="string">("Conversion to HTML file done successfully\n"</span>fclosesfpfclosedfp<span class="reserved_key2">return</span><span class="numeric_constant"> 0</span>;
+}</pre>
+</body>
+</html>

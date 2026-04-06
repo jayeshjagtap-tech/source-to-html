@@ -1,0 +1,53 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 14px;
+}
+
+pre {
+    margin: 0;
+}
+
+/* Reserved keywords (data types like int, char) */
+.reserved_key1 {
+    color: #00ff00; /* bright green */
+    font-weight: bold;
+}
+
+/* Control keywords (if, return, etc.) */
+.reserved_key2 {
+    color: #ffd700; /* gold */
+    font-weight: bold;
+}
+
+/* Comments */
+.comment {
+    color: #3399ff; /* light blue */
+    font-style: italic;
+}
+
+/* Preprocessor */
+.preprocess_dir {
+    color: #cc66ff; /* purple */
+}
+
+/* Header files */
+.header_file {
+    color: #ff4d4d; /* red */
+}
+
+/* Strings */
+.string {
+    color: #ff66cc; /* pink/magenta */
+}
+
+/* Numbers */
+.numeric_constant {
+    color: #cc9966; /* brownish */
+}
+
+/* ASCII char */
+.ascii_char {
+    color: #ff704d; /* firebrick style */
+}
